@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: vendor/github.com/containerd/continuity/resource_unix.go
+--- vendor/github.com/containerd/continuity/resource_unix.go.orig
++++ vendor/github.com/containerd/continuity/resource_unix.go
+@@ -1,4 +1,4 @@
+-// +build linux darwin freebsd solaris
++// +build linux darwin freebsd solaris openbsd
+ 
+ /*
+    Copyright The containerd Authors.
