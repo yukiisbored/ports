@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.0.1
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -25,6 +26,8 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml c crypto m qt5keychain
 WANTLIB += sqlite3 ssl z lib/inotify/inotify
 WANTLIB += Qt5Svg Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Positioning Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -41,14 +44,14 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
 			security/qtkeychain \
 			x11/qt5/qtsvg \
-			x11/qt5/qtquickcontrols2
+			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
 			-DBUILD_SHELL_INTEGRATION_DOLPHIN=OFF \
 			-DBUILD_SHELL_INTEGRATION=OFF \
 			-DUNIT_TESTING=ON \
-			-DWITH_CRASHREPORTER=OFF \
-			-DNO_SHIBBOLETH=ON
+			-DWITH_CRASHREPORTER=OFF
 
 # Do not install under /etc/Nextcloud
 CONFIGURE_ARGS +=	-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
