@@ -1,12 +1,14 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.1.1.1 2020/10/03 20:38:46 solene Exp $
 
-COMMENT =	command-line tool for controlling Docker
+COMMENT =		command-line tool for controlling Docker
+
+V =			19.03.13
+PKGNAME =		docker-${V}
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
-V =			19.03.13
 GH_TAGNAME =		v${V}
-PKGNAME =		docker-${V}
+
 
 CATEGORIES =		sysutils
 
