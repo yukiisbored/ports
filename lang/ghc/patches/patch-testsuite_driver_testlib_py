@@ -1,0 +1,35 @@
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.10 2019/09/30 11:44:18 kili Exp $
+Index: testsuite/driver/testlib.py
+--- testsuite/driver/testlib.py.orig
++++ testsuite/driver/testlib.py
+@@ -1573,6 +1573,13 @@ def compare_outputs(way, kind, normaliser, expected_fi
+     actual_raw = read_no_crs(actual_path)
+     actual_str = normaliser(actual_raw)
+ 
++    # Strip OpenBSDs linker warnings about strcpy(3) & friends.
++    if config.os == 'openbsd':
++        actual_str = re.sub('.*: In function .*:\n+(.*:[0-9]+:[0-9]+:\n)?:? *warning: .* is .* misused, please use .*\n',
++                            '', actual_str)
++        actual_str = re.sub('.*/libgmp\.so\.[0-9]*\.[0-9]*: warning: .* is .* misused, please use .*\n',
++                            '', actual_str)
++
+     # See Note [Output comparison].
+     if whitespace_normaliser(expected_str) == whitespace_normaliser(actual_str):
+         return 1
+@@ -1588,14 +1595,14 @@ def compare_outputs(way, kind, normaliser, expected_fi
+ 
+         if config.verbose >= 1 and _expect_pass(way):
+             # See Note [Output comparison].
+-            r = runCmd('diff -uw "{0}" "{1}"'.format(expected_normalised_path,
++            r = runCmd('diff -auw "{0}" "{1}"'.format(expected_normalised_path,
+                                                         actual_normalised_path),
+                         print_output = 1)
+ 
+             # If for some reason there were no non-whitespace differences,
+             # then do a full diff
+             if r == 0:
+-                r = runCmd('diff -u "{0}" "{1}"'.format(expected_normalised_path,
++                r = runCmd('diff -au "{0}" "{1}"'.format(expected_normalised_path,
+                                                            actual_normalised_path),
+                            print_output = 1)
+ 
