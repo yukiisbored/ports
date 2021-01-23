@@ -1,0 +1,23 @@
+* Attempts
+
+** Attempt #1 - Gut out calls (No [[https://github.com/desktop-app/tg_owt][tg_owt]], No libtgvoip, No libtgcall)
+
+   Too much stuff relies on WebRTC, for some /fucking/ reason.
+
+   At this point, might as well write a sniod backend for libtgvoip
+   along with adding tg_owt to the source code as /for some fucking
+   reason/ it isn't part of the /fucking/ repo submodules.
+
+   Oh well.
+
+   [[https://github.com/Kurento/libusrsctp][libusrsctp]] might be required, however I'm not certain. Skimming it,
+   it seems like it has conditions OpenBSD? Maybe some support? Not
+   sure.
+
+* List of libraries to be ported
+
+** Still vendored
+
+   - microsoft-gsl: https://github.com/microsoft/GSL
+   - tl-expected: https://github.com/TartanLlama/expected
+   - range-v3: https://github.com/ericniebler/range-v3

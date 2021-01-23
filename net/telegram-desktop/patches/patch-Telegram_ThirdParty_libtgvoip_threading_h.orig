@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: Telegram/ThirdParty/libtgvoip/threading.h
+--- Telegram/ThirdParty/libtgvoip/threading.h.orig
++++ Telegram/ThirdParty/libtgvoip/threading.h
+@@ -12,6 +12,7 @@
+ #if defined(_POSIX_THREADS) || defined(_POSIX_VERSION) || defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__))
+ 
+ #include <pthread.h>
++#include <pthread_np.h>
+ #include <semaphore.h>
+ #include <sched.h>
+ #include <unistd.h>
