@@ -8,6 +8,8 @@ MODCABAL_VERSION =		0.13.1.0
 CATEGORIES =			devel
 HOMEPAGE =			https://github.com/lspitzner/brittany/
 
+MAINTAINER =			Muhammad Kaisar Arkhan <hi@yukiisbo.red>
+
 # AGPL-3.0
 PERMIT_PACKAGE =		Yes
 
