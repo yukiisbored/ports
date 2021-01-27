@@ -17,15 +17,19 @@ MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${COMPILER_LIBCXX} EGL GL Qt5Core Qt5Gui Qt5Network
-WANTLIB +=		Qt5Widgets X11 c crypto drm m ssl
-WANTLIB +=		SDL2 SDL2_ttf avcodec avutil opus
-WANTLIB +=		Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
+WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
+WANTLIB += Qt5Widgets SDL2 SDL2_ttf X11 avcodec avutil c crypto
+WANTLIB += drm m opus ssl
 
 MODULES =		devel/qmake \
 			x11/qt5
 
-RUN_DEPENDS =		graphics/ffmpeg \
+RUN_DEPENDS =		x11/gtk+3,-guic \
+			devel/desktop-file-utils
+
+
+LIB_DEPENDS =		graphics/ffmpeg \
 			devel/sdl2 \
 			devel/sdl2-ttf \
 			audio/opus \

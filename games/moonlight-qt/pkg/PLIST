@@ -1,11 +1,6 @@
 @comment $OpenBSD: PLIST,v$
 @bin bin/moonlight
-share/applications/
 share/applications/com.moonlight_stream.Moonlight.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/moonlight.svg
 share/metainfo/
 share/metainfo/com.moonlight_stream.Moonlight.appdata.xml
