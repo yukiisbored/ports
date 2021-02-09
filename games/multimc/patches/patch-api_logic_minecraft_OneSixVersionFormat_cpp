@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: api/logic/minecraft/OneSixVersionFormat.cpp
+--- api/logic/minecraft/OneSixVersionFormat.cpp.orig
++++ api/logic/minecraft/OneSixVersionFormat.cpp
+@@ -21,6 +21,7 @@ LibraryPtr OneSixVersionFormat::libraryFromJson(const 
+     readString(libObj, "MMC-absoluteUrl", out->m_absoluteURL);
+     readString(libObj, "MMC-filename", out->m_filename);
+     readString(libObj, "MMC-displayname", out->m_displayname);
++    readString(libObj, "MMC-path", out->m_path);
+     return out;
+ }
+ 
+@@ -35,6 +36,8 @@ QJsonObject OneSixVersionFormat::libraryToJson(Library
+         libRoot.insert("MMC-filename", library->m_filename);
+     if (library->m_displayname.size())
+         libRoot.insert("MMC-displayname", library->m_displayname);
++    if (library->m_path.size())
++        libRoot.insert("MMC-path", library->m_path);
+     return libRoot;
+ }
+ 
