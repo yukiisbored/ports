@@ -3,21 +3,34 @@ $OpenBSD$
 Index: api/logic/minecraft/Library.h
 --- api/logic/minecraft/Library.h.orig
 +++ api/logic/minecraft/Library.h
-@@ -42,6 +42,7 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+@@ -42,6 +42,8 @@ class MULTIMC_LOGIC_EXPORT Library (public)
          newlib->m_name = base->m_name;
          newlib->m_repositoryURL = base->m_repositoryURL;
          newlib->m_hint = base->m_hint;
 +        newlib->m_path = base->m_path;
++        newlib->m_isNative = base->m_isNative;
          newlib->m_absoluteURL = base->m_absoluteURL;
          newlib->m_extractExcludes = base->m_extractExcludes;
          newlib->m_nativeClassifiers = base->m_nativeClassifiers;
-@@ -193,6 +194,9 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+@@ -90,7 +92,7 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+     /// Returns true if the library is native
+     bool isNative() const
+     {
+-        return m_nativeClassifiers.size() != 0;
++        return m_nativeClassifiers.size() != 0 || m_isNative;
+     }
+ 
+     void setStoragePrefix(QString prefix = QString());
+@@ -193,6 +195,12 @@ class MULTIMC_LOGIC_EXPORT Library (public)
       * MultiMC-specific type hint - modifies how the library is treated
       */
      QString m_hint;
 +
 +    /// MultiMC extension - path override
 +    QString m_path;
++
++    /// MultiMC extension - isNative override
++    bool m_isNative = false;
  
      /**
       * storage - by default the local libraries folder in multimc, but could be elsewhere

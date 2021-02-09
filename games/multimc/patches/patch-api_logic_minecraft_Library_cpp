@@ -28,3 +28,12 @@ Index: api/logic/minecraft/Library.cpp
          QFileInfo localFileInfo(fullPath);
          if(!localFileInfo.exists())
          {
+@@ -228,7 +239,7 @@ bool Library::isActive() const
+     }
+     if (isNative())
+     {
+-        result = result && m_nativeClassifiers.contains(currentSystem);
++        result = result && (m_nativeClassifiers.contains(currentSystem) || m_isNative);
+     }
+     return result;
+ }
