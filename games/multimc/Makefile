@@ -5,6 +5,7 @@ COMMENT =		free and open-source launcher for Minecraft
 # git clone --recurse-submodules -b 0.6.11 https://github.com/MultiMC/MultiMC5
 DISTNAME =		multimc-0.6.11
 MASTER_SITES =		https://distfiles.yukiisbo.red/
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -25,9 +26,11 @@ MODJAVA_VER =		1.8
 
 RUN_DEPENDS =		audio/openal \
 			games/lwjgl \
+			games/lwjgl3 \
 			java/javaPathHelper
 
 CXXFLAGS +=	-DLWJGL_DIR='\"${LOCALBASE}/share/lwjgl/\"' \
+		-DLWJGL3_DIR='\"${LOCALBASE}/share/lwjgl3/\"' \
 		-DJAVAPATHHELPER_PATH='\"${LOCALBASE}/bin/javaPathHelper\"'
 
 CONFIGURE_ARGS =	-DMultiMC_LAYOUT="lin-system"
