@@ -3,8 +3,20 @@ $OpenBSD$
 Index: api/logic/minecraft/ComponentUpdateTask.cpp
 --- api/logic/minecraft/ComponentUpdateTask.cpp.orig
 +++ api/logic/minecraft/ComponentUpdateTask.cpp
-@@ -486,8 +486,14 @@ static bool getTrivialComponentChanges(const Component
-                 toChange.insert(req);
+@@ -482,12 +482,24 @@ static bool getTrivialComponentChanges(const Component
+                 toAdd.insert(req);
+                 break;
+             case Decision::VersionNotSame:
+-                qDebug() << reqStr << "already has different version that can be changed.";
+-                toChange.insert(req);
++                if(req.uid == "org.lwjgl3" || req.uid == "org.lwjgl") {
++                    qDebug() << reqStr << "is a different version than required but is a platform-specific override.";
++                }
++                else
++                {
++                    qDebug() << reqStr << "already has different version that can be changed.";
++                    toChange.insert(req);
++                }
                  break;
              case Decision::LockedVersionNotSame:
 -                qDebug() << reqStr << "already has different version that cannot be changed.";
