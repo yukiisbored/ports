@@ -12,7 +12,7 @@ Index: api/logic/minecraft/Library.h
          newlib->m_absoluteURL = base->m_absoluteURL;
          newlib->m_extractExcludes = base->m_extractExcludes;
          newlib->m_nativeClassifiers = base->m_nativeClassifiers;
-@@ -90,7 +92,7 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+@@ -90,9 +92,14 @@ class MULTIMC_LOGIC_EXPORT Library (public)
      /// Returns true if the library is native
      bool isNative() const
      {
@@ -20,8 +20,27 @@ Index: api/logic/minecraft/Library.h
 +        return m_nativeClassifiers.size() != 0 || m_isNative;
      }
  
++    /// Set isNative override
++    void setNative(bool native) {
++        m_isNative = native;
++    }
++
      void setStoragePrefix(QString prefix = QString());
-@@ -193,6 +195,12 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+ 
+     /// Set the url base for downloads
+@@ -136,6 +143,11 @@ class MULTIMC_LOGIC_EXPORT Library (public)
+         m_hint = hint;
+     }
+ 
++    void setPath(const QString &path)
++    {
++        m_path = path;
++    }
++
+     /// Set the load rules
+     void setRules(QList<std::shared_ptr<Rule>> rules)
+     {
+@@ -193,6 +205,12 @@ class MULTIMC_LOGIC_EXPORT Library (public)
       * MultiMC-specific type hint - modifies how the library is treated
       */
      QString m_hint;
