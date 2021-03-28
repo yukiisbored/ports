@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v$
-@conflict cabal-install-<3.3
-@bin bin/cabal
