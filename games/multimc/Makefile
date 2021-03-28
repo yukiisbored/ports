@@ -2,10 +2,9 @@
 
 COMMENT =		free and open-source launcher for Minecraft
 
-# git clone --recurse-submodules -b 0.6.11 https://github.com/MultiMC/MultiMC5
-DISTNAME =		multimc-0.6.11
+# git clone --recurse-submodules -b 0.6.12 https://github.com/MultiMC/MultiMC5
+DISTNAME =		multimc-0.6.12
 MASTER_SITES =		https://distfiles.yukiisbo.red/
-REVISION =		1
 
 CATEGORIES =		games
 

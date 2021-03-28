@@ -22,7 +22,7 @@ Index: api/logic/launch/steps/PatchLWJGL.h
 +#pragma once
 +
 +#include <launch/LaunchStep.h>
-+#include <minecraft/ComponentList.h>
++#include <minecraft/PackProfile.h>
 +#include <net/Mode.h>
 +
 +#include "multimc_logic_export.h"
@@ -31,7 +31,7 @@ Index: api/logic/launch/steps/PatchLWJGL.h
 +{
 +    Q_OBJECT
 +public:
-+    explicit PatchLWJGL(LaunchTask *parent, Net::Mode mode, std::shared_ptr<ComponentList> components): LaunchStep(parent), m_mode(mode) {
++    explicit PatchLWJGL(LaunchTask *parent, Net::Mode mode, std::shared_ptr<PackProfile> components): LaunchStep(parent), m_mode(mode) {
 +        m_components = components;
 +    };
 +    virtual ~PatchLWJGL(){};
@@ -41,6 +41,6 @@ Index: api/logic/launch/steps/PatchLWJGL.h
 +    virtual bool abort();
 +
 +private:
-+    std::shared_ptr<ComponentList> m_components;
++    std::shared_ptr<PackProfile> m_components;
 +    Net::Mode m_mode = Net::Mode::Offline;
 +};

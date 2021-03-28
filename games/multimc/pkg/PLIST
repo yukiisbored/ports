@@ -6,7 +6,6 @@
 @so lib/libMultiMC_nbt++.so
 @so lib/libMultiMC_quazip.so
 @so lib/libMultiMC_rainbow.so
-@so lib/libMultiMC_unpack200.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/multimc/
 share/multimc/jars/
