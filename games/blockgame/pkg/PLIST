@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/Blockgame
 @so lib/libLauncher_iconfix.so
 @so lib/libLauncher_nbt++.so
