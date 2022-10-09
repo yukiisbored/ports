@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/11 07:11:18 rsadowski Exp $
-
 COMMENT =		open-source nvidia gamestream client
 
 V =			3.1.4
@@ -7,6 +5,7 @@ PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
 MASTER_SITES =		https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
+REVISION =		0
 
 CATEGORIES =		games
 
