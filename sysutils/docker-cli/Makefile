@@ -12,7 +12,6 @@ CATEGORIES =		sysutils
 
 HOMEPAGE =		https://docs.docker.com/engine/reference/commandline/cli/
 
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
