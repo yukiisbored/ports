@@ -11,8 +11,6 @@ CATEGORIES =		games
 
 HOMEPAGE =		https://moonlight-stream.org
 
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
-
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
