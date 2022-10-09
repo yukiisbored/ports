@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/05 19:55:42 paco Exp $
-
 COMMENT =		command-line tool for controlling Docker
 
-V =			20.10.3
+V =			20.10.5
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
@@ -15,7 +13,6 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://docs.docker.com/engine/reference/commandline/cli/
 
 MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
