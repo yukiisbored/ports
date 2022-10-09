@@ -9,8 +9,6 @@ CATEGORIES =		games
 
 HOMEPAGE =		https://github.com/yukiisbored/Launcher
 
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
-
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
