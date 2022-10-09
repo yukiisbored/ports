@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Index: libraries/launcher/CMakeLists.txt
 --- libraries/launcher/CMakeLists.txt.orig
 +++ libraries/launcher/CMakeLists.txt

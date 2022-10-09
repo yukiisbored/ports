@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Index: libraries/javacheck/CMakeLists.txt
 --- libraries/javacheck/CMakeLists.txt.orig
 +++ libraries/javacheck/CMakeLists.txt

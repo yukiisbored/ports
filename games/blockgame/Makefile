@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT =		free and open-source launcher for Minecraft
 
 
